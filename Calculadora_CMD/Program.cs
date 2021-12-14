@@ -16,6 +16,7 @@ namespace Calculadora_CMD
             Divisao divisao;
             Multiplicacao multiplicacao;
             Potencia potencia;
+            Raiz raiz;
             
 
             
@@ -104,7 +105,7 @@ namespace Calculadora_CMD
                         break;
 
                     case Menu.Potencia:
-                        Console.WriteLine("Potencia de um números:");
+                        Console.WriteLine("Potencia de um número:");
                         Console.WriteLine();
                         Console.WriteLine("Digite a base: ");
                         Console.WriteLine();
@@ -116,6 +117,21 @@ namespace Calculadora_CMD
                         potencia = new Potencia(pot1, pot2);
                         Console.WriteLine();
                         Console.WriteLine($"O resultado é {potencia.resultado.ToString(CultureInfo.InvariantCulture)}");
+                        Console.WriteLine();
+                        Console.WriteLine("Aperte ENTER para voltar ao menu");
+                        Console.ReadLine();
+                        break;
+
+                    case Menu.Raiz:
+                        Console.WriteLine("Raiz de um número:");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite o número: ");
+                        Console.WriteLine();
+                        int raiz1 = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        raiz = new Raiz(raiz1);
+                        Console.WriteLine();
+                        Console.WriteLine($"O resultado é {raiz.resultado.ToString(CultureInfo.InvariantCulture)}");
                         Console.WriteLine();
                         Console.WriteLine("Aperte ENTER para voltar ao menu");
                         Console.ReadLine();
