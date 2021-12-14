@@ -8,12 +8,27 @@ namespace Calculadora_CMD
     {
         static void Main(string[] args)
         {
+            Menu opcao = new Menu();
 
-            Console.WriteLine("Bem vindo ao CALC! Selecione uma das opções: ");
-            Console.WriteLine();
-            Console.WriteLine("1 - Soma\n2 - Subtração\n3 - Divisão\n4 - Multiplicação\n5 - Potência\n6 - Raiz\n7 - Sair");
-            Console.ReadLine();
+            bool escolheuSair = false;
+            while (!escolheuSair)
+            {
+                Console.WriteLine("Bem vindo ao CALC! Selecione uma das opções: ");
+                Console.WriteLine();
+                Console.WriteLine("1 - Soma\n2 - Subtração\n3 - Divisão\n4 - Multiplicação\n5 - Potência\n6 - Raiz\n7 - Sair");
 
+                opcao = (Menu)int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case Menu.Sair:
+                        escolheuSair=true;
+                        break;
+                }
+
+                Console.Clear();
+            }
+            
         }
     }
 
