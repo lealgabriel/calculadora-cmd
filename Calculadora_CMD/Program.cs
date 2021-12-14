@@ -15,6 +15,7 @@ namespace Calculadora_CMD
             Subtracao subtracao;
             Divisao divisao;
             Multiplicacao multiplicacao;
+            Potencia potencia;
             
 
             
@@ -97,6 +98,24 @@ namespace Calculadora_CMD
                         multiplicacao = new Multiplicacao(mult1, mult2);
                         Console.WriteLine();
                         Console.WriteLine($"O resultado é {multiplicacao.resultado}");
+                        Console.WriteLine();
+                        Console.WriteLine("Aperte ENTER para voltar ao menu");
+                        Console.ReadLine();
+                        break;
+
+                    case Menu.Potencia:
+                        Console.WriteLine("Potencia de um números:");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite a base: ");
+                        Console.WriteLine();
+                        int pot1 = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        Console.WriteLine("Digite o expoente: ");
+                        Console.WriteLine();
+                        int pot2 = int.Parse(Console.ReadLine());
+                        potencia = new Potencia(pot1, pot2);
+                        Console.WriteLine();
+                        Console.WriteLine($"O resultado é {potencia.resultado.ToString(CultureInfo.InvariantCulture)}");
                         Console.WriteLine();
                         Console.WriteLine("Aperte ENTER para voltar ao menu");
                         Console.ReadLine();

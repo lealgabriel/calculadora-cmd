@@ -2,12 +2,12 @@
 {
     internal class Multiplicacao
     {
-        public double A { get; set; }
-        public double B { get; set; }
+        public int A { get; set; }
+        public int B { get; set; }
 
-        public double resultado;
+        public int resultado;
 
-        public Multiplicacao(double a, double b)
+        public Multiplicacao(int a, int b)
         {
             A = a;
             B = b;
