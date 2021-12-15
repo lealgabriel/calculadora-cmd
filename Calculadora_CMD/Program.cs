@@ -10,7 +10,8 @@ namespace Calculadora_CMD
     {
         static void Main(string[] args)
         {
-            Menu opcao = new Menu();
+            Menu menu = new Menu();
+            EnumMenu opcao = new EnumMenu();
             Soma soma;
             Subtracao subtracao;
             Divisao divisao;
@@ -24,15 +25,13 @@ namespace Calculadora_CMD
             bool escolheuSair = false;
             while (!escolheuSair)
             {
-                Console.WriteLine("Bem vindo ao CALC! Selecione uma das opções: ");
-                Console.WriteLine();
-                Console.WriteLine("1 - Soma\n2 - Subtração\n3 - Divisão\n4 - Multiplicação\n5 - Potência\n6 - Raiz\n7 - Sair");
+                Console.Write(menu);
 
-                opcao = (Menu)int.Parse(Console.ReadLine());
+                opcao = (EnumMenu)int.Parse(Console.ReadLine());
 
                 switch (opcao)
                 {
-                    case Menu.Soma:
+                    case EnumMenu.Soma:
                         Console.WriteLine("Soma de dois números:");
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
@@ -50,7 +49,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Subtracao:
+                    case EnumMenu.Subtracao:
                         Console.WriteLine("Subtração de dois números:");
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
@@ -68,7 +67,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Divisao:
+                    case EnumMenu.Divisao:
                         Console.WriteLine("Divisão de dois números:");
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
@@ -86,7 +85,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Multiplicacao:
+                    case EnumMenu.Multiplicacao:
                         Console.WriteLine("Multiplicação de dois números:");
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
@@ -104,7 +103,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Potencia:
+                    case EnumMenu.Potencia:
                         Console.WriteLine("Potencia de um número:");
                         Console.WriteLine();
                         Console.WriteLine("Digite a base: ");
@@ -122,7 +121,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Raiz:
+                    case EnumMenu.Raiz:
                         Console.WriteLine("Raiz de um número:");
                         Console.WriteLine();
                         Console.WriteLine("Digite o número: ");
@@ -137,7 +136,7 @@ namespace Calculadora_CMD
                         Console.ReadLine();
                         break;
 
-                    case Menu.Sair:
+                    case EnumMenu.Sair:
                         escolheuSair=true;
                         break;
                 }

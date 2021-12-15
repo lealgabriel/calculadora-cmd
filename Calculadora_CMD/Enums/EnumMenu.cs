@@ -1,6 +1,6 @@
 ﻿namespace Calculadora_CMD.Enums
 {
-    enum Menu : int
+    enum EnumMenu : int
     {
         Soma = 1,
         Subtracao = 2,
