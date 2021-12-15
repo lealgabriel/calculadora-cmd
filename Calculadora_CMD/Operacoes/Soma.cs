@@ -5,14 +5,14 @@
         public int A { get; set; }
         public int B { get; set; }
 
-        public int resultado; 
+        public int Resultado; 
 
         public Soma(int a, int b)
         {
             A = a;
             B = b;
 
-            resultado = a + b;
+            Resultado = a + b;
         }
 
         

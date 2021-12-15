@@ -10,13 +10,13 @@ namespace Calculadora_CMD.Operacoes
     {
         public int A { get; set; }
 
-        public float resultado;
+        public float Resultado;
 
         public Raiz(int a)
         {
             A = a;
 
-            resultado = (float)Math.Sqrt(a);
+            Resultado = (float)Math.Sqrt(a);
         }
     }
 }

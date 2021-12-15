@@ -11,14 +11,14 @@ namespace Calculadora_CMD.Operacoes
         public int A { get; set; }
         public int B { get; set; }
 
-        public float resultado;
+        public float Resultado;
 
         public Potencia(int a, int b)
         {
             A = a;
             B = b;
 
-            resultado = (float)Math.Pow(a, b);
+            Resultado = (float)Math.Pow(a, b);
         }
     }
 }
