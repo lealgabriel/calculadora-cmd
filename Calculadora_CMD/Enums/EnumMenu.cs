@@ -8,6 +8,7 @@
         Multiplicacao = 4,
         Potencia = 5,
         Raiz = 6,
-        Sair = 7
+        Regra3 = 7,
+        Sair = 8
     }
 }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Calculadora_CMD
+﻿namespace Calculadora_CMD
 {
     internal class Calculadora
     {
         public int A;
         public int B;
+        public int C;
 
         public int Soma()
         {
@@ -39,6 +34,11 @@ namespace Calculadora_CMD
         public double Raiz()
         {
             return Math.Sqrt(A);
+        }
+
+        public double Regra3()
+        {
+            return B * C / A;
         }
 
 

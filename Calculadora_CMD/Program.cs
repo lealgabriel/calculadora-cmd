@@ -105,6 +105,23 @@ namespace Calculadora_CMD
                         Console.WriteLine($"O resultado é {calculadora.Raiz()}");
                         break;
 
+                    case EnumMenu.Regra3:
+                        Console.WriteLine("##### A está para B #####");
+                        Console.WriteLine();
+                        Console.Write("Digite o número que representa A: ");
+                        calculadora.A = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        Console.Write("Digite o número que representa B: ");
+                        calculadora.B = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        Console.WriteLine("##### C está para X #####");
+                        Console.WriteLine();
+                        Console.Write("Digite o número que representa C: ");
+                        calculadora.C = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        Console.WriteLine($"X = {calculadora.Regra3()}");
+                        break;
+
                     case EnumMenu.Sair:
                         Console.WriteLine("Tem certeza que deseja sair? (s/n)");
                         char sairMenu = char.Parse(Console.ReadLine());
