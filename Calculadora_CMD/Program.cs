@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Calculadora_CMD.Enums;
-using Calculadora_CMD.Operacoes;
-using System.Globalization;
 
 namespace Calculadora_CMD
 {
@@ -12,12 +9,7 @@ namespace Calculadora_CMD
         {
             Menu menu = new Menu();
             EnumMenu opcao = new EnumMenu();
-            Soma soma;
-            Subtracao subtracao;
-            Divisao divisao;
-            Multiplicacao multiplicacao;
-            Potencia potencia;
-            Raiz raiz;
+            Calculadora calculadora = new Calculadora();
 
 
 
@@ -37,17 +29,13 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
                         Console.WriteLine();
-                        int som1 = int.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         Console.WriteLine("Digite o segundo número: ");
                         Console.WriteLine();
-                        int som2 = int.Parse(Console.ReadLine());
-                        soma = new Soma(som1, som2);
+                        calculadora.B = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {soma.Resultado}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Soma()}");
                         break;
 
                     case EnumMenu.Subtracao:
@@ -55,17 +43,13 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
                         Console.WriteLine();
-                        int sub1 = int.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         Console.WriteLine("Digite o segundo número: ");
                         Console.WriteLine();
-                        int sub2 = int.Parse(Console.ReadLine());
-                        subtracao = new Subtracao(sub1, sub2);
+                        calculadora.B = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {subtracao.Resultado}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Subtracao()}");
                         break;
 
                     case EnumMenu.Divisao:
@@ -73,17 +57,13 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
                         Console.WriteLine();
-                        double div1 = double.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         Console.WriteLine("Digite o segundo número: ");
                         Console.WriteLine();
-                        double div2 = double.Parse(Console.ReadLine());
-                        divisao = new Divisao(div1, div2);
+                        calculadora.B = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {divisao.Resultado.ToString("F2", CultureInfo.InvariantCulture)}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Divisao()}");
                         break;
 
                     case EnumMenu.Multiplicacao:
@@ -91,17 +71,13 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite o primeiro número: ");
                         Console.WriteLine();
-                        int mult1 = int.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         Console.WriteLine("Digite o segundo número: ");
                         Console.WriteLine();
-                        int mult2 = int.Parse(Console.ReadLine());
-                        multiplicacao = new Multiplicacao(mult1, mult2);
+                        calculadora.B = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {multiplicacao.Resultado}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Multiplicacao()}");
                         break;
 
                     case EnumMenu.Potencia:
@@ -109,17 +85,13 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite a base: ");
                         Console.WriteLine();
-                        int pot1 = int.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         Console.WriteLine("Digite o expoente: ");
                         Console.WriteLine();
-                        int pot2 = int.Parse(Console.ReadLine());
-                        potencia = new Potencia(pot1, pot2);
+                        calculadora.B = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {potencia.Resultado.ToString(CultureInfo.InvariantCulture)}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Potencia()}");
                         break;
 
                     case EnumMenu.Raiz:
@@ -127,14 +99,10 @@ namespace Calculadora_CMD
                         Console.WriteLine();
                         Console.WriteLine("Digite o número: ");
                         Console.WriteLine();
-                        int raiz1 = int.Parse(Console.ReadLine());
+                        calculadora.A = int.Parse(Console.ReadLine());
                         Console.WriteLine();
-                        raiz = new Raiz(raiz1);
                         Console.WriteLine();
-                        Console.WriteLine($"O resultado é {raiz.Resultado.ToString(CultureInfo.InvariantCulture)}");
-                        Console.WriteLine();
-                        Console.WriteLine("Aperte ENTER para voltar ao menu");
-                        Console.ReadLine();
+                        Console.WriteLine($"O resultado é {calculadora.Raiz()}");
                         break;
 
                     case EnumMenu.Sair:
@@ -146,7 +114,14 @@ namespace Calculadora_CMD
                         }
                         break;
                 }
-
+                
+                if (escolheuSair == false)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Aperte ENTER para voltar ao menu");
+                    Console.ReadLine();
+                }
+                
                 Console.Clear();
             }
 
